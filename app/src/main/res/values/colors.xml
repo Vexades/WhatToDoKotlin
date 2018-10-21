@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ff4081</color>
+
+    <color name="swipeoption_green">#36CF8E</color>
+    <color name="swipeoption_blue">#3693D0</color>
+    <color name="swipeoption_purple" tools:ignore="MissingDefaultResource">#ff1744</color>
+
+
+    <color name="yellow_toolbar">#ffc50c</color>
+    <color name="yellor_dark_status_bar">#FFF7BD03</color>
+    <color name="white">#FFFFFF</color>
+    <color name="darkBlue">#2036b1</color>
+</resources>

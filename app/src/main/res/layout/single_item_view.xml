@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:elevation="15dp"
+    android:clickable="true"
+    android:onClick="dismissKeyboad"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:elevation="10dp">
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/textInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:saveEnabled="true"
+                        android:textColorHint="@color/yellow_toolbar"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="30"
+                        app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error"
+                        app:errorEnabled="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/label_decription"
+                            android:imeOptions="flagNoEnterAction"
+                            android:inputType="textCapWords"
+                            android:maxLength="70"
+                            android:scrollbars="vertical"
+                            android:textColor="#000000"
+                            android:textColorHint="@color/yellow_toolbar"
+                            android:textSize="20sp"
+                            android:typeface="normal" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/textView"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/ic_today_black_24dp"
+                        android:tint="@color/white"
+                        android:background="@color/yellow_toolbar"
+                        android:text="@string/label_date"
+                        android:layout_marginStart="16dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toEndOf="@id/textView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="61dp"
+                        android:paddingStart="8dp"
+                        android:background="#e7e4e4"
+                        android:textColor="#747474"
+                        android:gravity="center_vertical"
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
+
+                    <TextView
+                        android:id="@+id/dateTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/date"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/yellow_toolbar"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@id/save"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="#e7e4e4"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/calendarImageView"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/ic_edit_black_24dp"
+                        android:tint="@color/white"
+                        android:background="@color/yellow_toolbar"
+                        android:text="@string/label_date"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        app:layout_constraintStart_toEndOf="@id/date"
+                        app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
+
+                    <Button
+                        android:id="@+id/save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/button_shape"
+                        android:fontFamily="@font/roboto_mono"
+                        android:text="@string/label_save"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:elevation="10dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/optional_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/optional"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/label_optional"
+                        android:textAlignment="center"
+                        android:textColor="@color/yellow_toolbar"
+                        android:textSize="20sp"
+                        android:typeface="normal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/notif"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif"
+                        android:freezesText="true"
+                        android:text="@string/label_notification"
+                        android:textAlignment="center"
+                        android:textColor="@color/yellow_toolbar"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/optional"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="16dp"/>
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_margin="8dp"
+               android:visibility="gone"
+               android:id="@+id/notif_layout">
+
+               <android.support.v7.widget.CardView
+                   android:id="@+id/daysCard"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:transitionName="days_transition_card"
+                   android:layout_marginEnd="8dp">
+
+                   <android.support.design.widget.TextInputLayout
+                       android:id="@+id/textDaysLayout"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginEnd="16dp"
+                       android:layout_marginStart="16dp"
+                       android:layout_marginTop="16dp"
+                       android:layout_weight="1"
+                       android:saveEnabled="true"
+                       android:textColorHint="@color/yellow_toolbar"
+                       app:counterEnabled="false"
+                       app:counterMaxLength="4"
+                       app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error"
+                       app:errorEnabled="true"
+                       android:transitionName="days_transition_layout"
+
+                      >
+
+                       <android.support.design.widget.TextInputEditText
+                           android:id="@+id/textDays"
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:hint="Days"
+                           android:transitionName="days_transition_text"
+                           android:imeOptions="flagNoEnterAction"
+                           android:inputType="number"
+                           android:scrollbars="vertical"
+                           android:textColor="#000000"
+                           android:textColorHint="@color/yellow_toolbar"
+                           android:textSize="16sp"
+                           android:typeface="normal" />
+                   </android.support.design.widget.TextInputLayout>
+
+               </android.support.v7.widget.CardView>
+
+               <android.support.v7.widget.CardView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:layout_marginEnd="8dp">
+
+                   <android.support.design.widget.TextInputLayout
+                       android:id="@+id/textHoursLayout"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginEnd="16dp"
+                       android:layout_marginStart="16dp"
+                       android:layout_marginTop="16dp"
+                       android:layout_weight="1"
+                       android:saveEnabled="true"
+                       android:textColorHint="@color/yellow_toolbar"
+                       app:counterEnabled="false"
+                       app:counterMaxLength="4"
+                       app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error"
+                       app:errorEnabled="true"
+                       android:transitionName="days_transition_layout"
+
+                       >
+
+                       <android.support.design.widget.TextInputEditText
+                           android:id="@+id/textHours"
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:hint="Hours"
+                           android:transitionName="days_transition"
+                           android:imeOptions="flagNoEnterAction"
+                           android:inputType="number"
+                           android:scrollbars="vertical"
+                           android:textColor="#000000"
+                           android:textColorHint="@color/yellow_toolbar"
+                           android:textSize="16sp"
+                           android:typeface="normal" />
+                   </android.support.design.widget.TextInputLayout>
+
+               </android.support.v7.widget.CardView>
+
+               <android.support.v7.widget.CardView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1">
+
+                   <android.support.design.widget.TextInputLayout
+                       android:id="@+id/textMinutesLayout"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginEnd="16dp"
+                       android:layout_marginStart="16dp"
+                       android:layout_marginTop="16dp"
+                       android:layout_weight="1"
+                       android:saveEnabled="true"
+                       android:textColorHint="@color/yellow_toolbar"
+                       app:counterEnabled="false"
+                       app:counterMaxLength="4"
+                       app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error"
+                       app:errorEnabled="true"
+                       android:transitionName="days_transition_layout"
+
+                       >
+
+                       <android.support.design.widget.TextInputEditText
+                           android:id="@+id/textMinutes"
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:hint="Minutes"
+                           android:transitionName="days_transition"
+                           android:imeOptions="flagNoEnterAction"
+                           android:inputType="number"
+                           android:scrollbars="vertical"
+                           android:textColor="#000000"
+                           android:textColorHint="@color/yellow_toolbar"
+                           android:textSize="16sp"
+                           android:typeface="normal" />
+                   </android.support.design.widget.TextInputLayout>
+
+               </android.support.v7.widget.CardView>
+
+           </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/photo_button"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="16dp"
+
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/yellow_toolbar"
+                    android:src="@drawable/ic_camera_alt_black_24dp"
+                    android:text="@string/label_photo_button"
+                    android:textColor="@color/dsb_track_color"
+                    android:tint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/photoLayout">
+
+                <ImageView
+                    android:id="@+id/photo"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

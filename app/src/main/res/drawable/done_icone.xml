@@ -1,0 +1,13 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:gravity="fill">
+        <shape android:shape="oval" >
+            <solid  android:color = "#e7373e3e"/>
+        </shape>
+    </item>
+    <item
+        android:gravity="center"
+        android:drawable="@drawable/ic_done_black_24dp"
+        />
+
+</layer-list>

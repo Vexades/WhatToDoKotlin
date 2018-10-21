@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/darkBlue"
+    android:elevation="10dp"
+    android:clickable="true"
+    android:layout_marginTop="?attr/actionBarSize">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/imageCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageDetail"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_margin="8dp"
+                android:background="#9e0c0c"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/photo_button"
+                android:layout_width="172dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="140dp"
+                android:backgroundTint="@color/yellow_toolbar"
+                android:src="@drawable/ic_camera_alt_black_24dp"
+                android:text="@string/label_photo_button"
+                android:textColor="@color/dsb_track_color"
+                android:tint="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"/>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/widgetsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/imageCard">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/description_image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_description_black_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/yellow_toolbar"
+                android:layout_gravity="bottom|end"
+                />
+
+            <TextView
+                android:id="@+id/nameDetail"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:background="#e7e4e4"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="#747474"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@id/edit_description"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/description_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/edit_description"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@color/yellow_toolbar"
+                android:src="@drawable/ic_edit_black_24dp"
+                android:tint="@color/white"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/time_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/nameDetail"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/time_image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom|end"
+                android:clickable="true"
+                android:src="@drawable/ic_fab_final"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_image"
+                android:background="@color/yellow_toolbar"
+                android:tint="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/timeDetail"
+                android:paddingStart="8dp"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:background="#e7e4e4"
+                android:textColor="#747474"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/time_image"
+                app:layout_constraintTop_toBottomOf="@id/description_image"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:layout_constraintEnd_toStartOf="@id/time_edit"/>
+
+            <ImageView
+                android:id="@+id/time_edit"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_edit_black_24dp"
+                android:tint="@color/white"
+                android:background="@color/yellow_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_image"
+                android:layout_marginTop="16dp"
+                />
+
+            <ImageView
+                android:id="@+id/calendar_image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom|end"
+                android:clickable="true"
+                android:src="@drawable/ic_today_black_24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/time_image"
+                android:background="@color/yellow_toolbar"
+                android:tint="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/dateDetail"
+                android:paddingStart="8dp"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:background="#e7e4e4"
+                android:textColor="#747474"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/time_image"
+                app:layout_constraintTop_toBottomOf="@id/time_edit"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:layout_constraintEnd_toStartOf="@id/calendar_edit"/>
+            <ImageView
+                android:id="@+id/calendar_edit"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_edit_black_24dp"
+                android:tint="@color/white"
+                android:background="@color/yellow_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/time_image"
+                android:layout_marginTop="16dp"
+                />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>
